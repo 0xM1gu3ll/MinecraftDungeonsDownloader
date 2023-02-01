@@ -48,8 +48,21 @@ def download_assets():
                         file.write(response.content)
     except Exception as error:
         print("Something went wrong: ", error)
-
+def download_directx():
+    print("Now downloading DirectX")
+    response = requests.get("https://download.microsoft.com/download/8/4/A/84A35BF1-DAFE-4AE8-82AF-AD2AE20B6B14/directx_Jun2010_redist.exe")
+    with open("Dungeons/directx_Jun2010_redist.exe", "wb") as file:
+        file.write(response.content)
+def install_directx():
+    if os.name() == "Windows":
+        os.system("cd Dungeons && directx_Jun2010_redist.exe /silent")
+    else:
+        print("You current system is" + os.name() + ", so you'll need to install the DirectX manually at the Windows")
 get_manifest()
 create_folders_and_files()
 download_assets()
-print("")
+download_directx()
+install_directx()
+print("Warning: You can only play in a Windows computer")
+print("To run the game, you'll need to install DirectX, It's located at the Dungeons/directx_Jun2010_redist.exe, just double click and install")
+print("If you are reading this message, It means that you can play the game now!")
