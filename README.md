@@ -21,3 +21,6 @@ python3 -m pip instal -r requirements.txt
 python3 main.py
 ```
 <p style="color: red">Warning: do not let the pc turn on the sleep mode, the game files can not download if you do that!</p>
+
+# It is safe?
+It's open-source, so if you don't trust me, you can analyze the code by yourself.
